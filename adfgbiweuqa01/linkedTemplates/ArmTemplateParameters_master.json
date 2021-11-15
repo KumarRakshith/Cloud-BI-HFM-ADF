@@ -1,0 +1,59 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adfgbiweuqa01"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureFunction1_functionKey": {
+			"value": ""
+		},
+		"lnkservicesynpdwh_connectionString": {
+			"value": ""
+		},
+		"lnksrvcAzfunctionapp_functionKey": {
+			"value": ""
+		},
+		"lnksvr_blobforpowershell_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://adlsgen2finweulzdev01.dfs.core.windows.net"
+		},
+		"AzureFunction1_properties_typeProperties_functionAppUrl": {
+			"value": "https://functionappgbi.azurewebsites.net"
+		},
+		"AzureKeyVaultfunctionapp_properties_typeProperties_baseUrl": {
+			"value": "https://kvgbiweudev01.vault.azure.net/"
+		},
+		"lnksrvcAzfunctionapp_properties_typeProperties_functionAppUrl": {
+			"value": "https://functionappgbi.azurewebsites.net"
+		},
+		"managedprivateendpointadlsgen2_properties_privateLinkResourceId": {
+			"value": "/subscriptions/617f489e-6fda-4835-a79d-af3ac58aa8d4/resourceGroups/RG_WEU_NONPROD_GBI_DEV/providers/Microsoft.Storage/storageAccounts/adlsgen2finweustdev01"
+		},
+		"managedprivateendpointadlsgen2_properties_groupId": {
+			"value": "dfs"
+		},
+		"pvtenpointSqlServer1_properties_privateLinkResourceId": {
+			"value": "/subscriptions/617f489e-6fda-4835-a79d-af3ac58aa8d4/resourceGroups/RG_WEU_NONPROD_GBI_DEV/providers/Microsoft.Sql/servers/sqlsvrgbiweudev01"
+		},
+		"pvtenpointSqlServer1_properties_groupId": {
+			"value": "sqlServer"
+		},
+		"pvtenpointSqlServer1_properties_fqdns": {
+			"value": [
+				"sqlsvrgbiweudev01.database.windows.net"
+			]
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
