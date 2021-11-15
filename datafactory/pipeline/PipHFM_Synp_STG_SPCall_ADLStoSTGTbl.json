@@ -1,0 +1,30 @@
+{
+	"name": "PipHFM_Synp_STG_SPCall_ADLStoSTGTbl",
+	"properties": {
+		"activities": [
+			{
+				"name": "TaskSynpADLStoSTGCall",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.02:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "HFM_STG.P_ALIM_COPYINTO_TABLE"
+				},
+				"linkedServiceName": {
+					"referenceName": "lnkservicesynpdwh",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-03-16T13:31:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

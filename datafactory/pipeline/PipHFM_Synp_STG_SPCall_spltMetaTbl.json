@@ -1,0 +1,30 @@
+{
+	"name": "PipHFM_Synp_STG_SPCall_spltMetaTbl",
+	"properties": {
+		"activities": [
+			{
+				"name": "TSK_STG_SPCall_Metasplit",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.01:00:00",
+					"retry": 2,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "HFM_STG.P_ALIM_SplitTable_new"
+				},
+				"linkedServiceName": {
+					"referenceName": "lnkservicesynpdwh",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-03-16T13:31:33Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

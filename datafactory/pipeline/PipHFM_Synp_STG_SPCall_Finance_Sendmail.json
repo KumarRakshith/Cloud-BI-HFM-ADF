@@ -1,0 +1,106 @@
+{
+	"name": "PipHFM_Synp_STG_SPCall_Finance_Sendmail",
+	"properties": {
+		"activities": [
+			{
+				"name": "TaskSTGSPFinance",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.02:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[HFM_STG].[P_ALIM_LoadFinance_test]"
+				},
+				"linkedServiceName": {
+					"referenceName": "lnkservicesynpdwh",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Websendmailfail",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "TaskSTGSPFinance",
+						"dependencyConditions": [
+							"Failed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://prod-103.westeurope.logic.azure.com:443/workflows/d4af5c28f7674fbe988815c7b4ab3235/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=AmVJ8zkRBa48gjg5TwC6SkZEdR6BqEfICyKIGiA0oQk",
+					"connectVia": {
+						"referenceName": "AutoResolveIntegrationRuntime",
+						"type": "IntegrationRuntimeReference"
+					},
+					"method": "POST",
+					"headers": {
+						"Content-Type": "application/json"
+					},
+					"body": {
+						"DataFactoryName": "@{pipeline().DataFactory}",
+						"PipelineName": "@{pipeline().Pipeline}",
+						"Subject": "An error has occurred!",
+						"ErrorMessage": "The ADF pipeline has crashed! Please check the logs.",
+						"EmailTo": "himanshu.b.singhal@capgemini.com"
+					}
+				}
+			},
+			{
+				"name": "WebSendmailSuccess",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "TaskSTGSPFinance",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://prod-103.westeurope.logic.azure.com:443/workflows/d4af5c28f7674fbe988815c7b4ab3235/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=AmVJ8zkRBa48gjg5TwC6SkZEdR6BqEfICyKIGiA0oQk",
+					"connectVia": {
+						"referenceName": "AutoResolveIntegrationRuntime",
+						"type": "IntegrationRuntimeReference"
+					},
+					"method": "POST",
+					"headers": {
+						"Content-Type": "application/json"
+					},
+					"body": {
+						"DataFactoryName": "@{pipeline().DataFactory}",
+						"PipelineName": "@{pipeline().Pipeline}",
+						"Subject": "Pipeline finished!",
+						"ErrorMessage": "Everything is okey-dokey!",
+						"EmailTo": "himanshu.b.singhal@capgemini.com"
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-03-16T13:31:28Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

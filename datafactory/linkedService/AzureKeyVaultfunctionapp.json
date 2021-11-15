@@ -1,0 +1,11 @@
+{
+	"name": "AzureKeyVaultfunctionapp",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://kvgbiweudev01.vault.azure.net/"
+		}
+	}
+}

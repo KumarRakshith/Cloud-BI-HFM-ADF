@@ -1,0 +1,17 @@
+{
+	"name": "AzureSynapseTable2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lnkservicesynpdwh",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "HIERARCHIES_Account_Src"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

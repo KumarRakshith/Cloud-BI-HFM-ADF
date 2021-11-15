@@ -1,0 +1,7 @@
+{
+	"name": "managedprivateendpointadlsgen2",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/617f489e-6fda-4835-a79d-af3ac58aa8d4/resourceGroups/RG_WEU_NONPROD_GBI_DEV/providers/Microsoft.Storage/storageAccounts/adlsgen2finweustdev01",
+		"groupId": "dfs"
+	}
+}

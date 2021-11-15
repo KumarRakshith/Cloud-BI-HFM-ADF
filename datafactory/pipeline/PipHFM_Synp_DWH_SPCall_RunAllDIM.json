@@ -1,0 +1,30 @@
+{
+	"name": "PipHFM_Synp_DWH_SPCall_RunAllDIM",
+	"properties": {
+		"activities": [
+			{
+				"name": "TskDWHSPCALLDWHALLDIM",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.02:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[HFM_DWH].[Call_SP_RunAll_DWH]"
+				},
+				"linkedServiceName": {
+					"referenceName": "lnkservicesynpdwh",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-03-16T13:31:27Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

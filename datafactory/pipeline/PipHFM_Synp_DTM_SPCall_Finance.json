@@ -1,0 +1,30 @@
+{
+	"name": "PipHFM_Synp_DTM_SPCall_Finance",
+	"properties": {
+		"activities": [
+			{
+				"name": "TaskDTMSPFinance",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.10:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[HFM_DTM_20].[P_TF_FINANCE]"
+				},
+				"linkedServiceName": {
+					"referenceName": "lnkservicesynpdwh",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-03-16T13:31:27Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

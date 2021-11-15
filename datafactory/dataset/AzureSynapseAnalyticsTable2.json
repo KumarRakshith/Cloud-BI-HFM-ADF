@@ -1,0 +1,17 @@
+{
+	"name": "AzureSynapseAnalyticsTable2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lnkservicesynpdwh",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "HFM_DTM",
+			"table": "TD_ACCOUNT"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

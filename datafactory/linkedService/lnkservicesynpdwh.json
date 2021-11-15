@@ -1,0 +1,15 @@
+{
+	"name": "lnkservicesynpdwh",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDW",
+		"typeProperties": {
+			"connectionString": ""
+		},
+		"connectVia": {
+			"referenceName": "selfhostedintegratedruntimedev01",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
