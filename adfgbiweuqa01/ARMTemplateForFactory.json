@@ -361,7 +361,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "Web",
+						"name": "Web1",
 						"type": "WebActivity",
 						"dependsOn": [],
 						"policy": {
